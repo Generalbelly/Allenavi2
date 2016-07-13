@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import FBSDKCoreKit
 import Firebase
+import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FIRApp.configure()
         UINavigationBar.appearance().translucent = false
-        let mixpanel = Mixpanel.sharedInstanceWithToken("60a14fadb8f99ceb2fbe3b91f56cfc4f")
+        _ = Mixpanel.sharedInstanceWithToken("60a14fadb8f99ceb2fbe3b91f56cfc4f")
         
         return true
     }

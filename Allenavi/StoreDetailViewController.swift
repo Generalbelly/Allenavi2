@@ -203,9 +203,7 @@ extension StoreDetailViewController: UITableViewDataSource, UITableViewDelegate 
             cell.userImage.layer.cornerRadius = cell.userImage.bounds.height / 2
             cell.userImage.layer.masksToBounds = true
             cell.postPic!.kf_setImageWithURL(NSURL(string: post.imageUrl)!, placeholderImage: nil, optionsInfo: nil, progressBlock: { receivedSize, totalSize in }, completionHandler: { image, error, cacheType, imageURL in
-                if image!.size.height > image!.size.width {
-                    cell.postPic!.contentMode = .ScaleAspectFill
-                }
+                cell.postPic!.contentMode = .ScaleAspectFill
                 cell.postPic.userInteractionEnabled = true
                 let tgr = UITapGestureRecognizer(target: self, action: #selector(StoreDetailViewController.picTapped(_:)))
                 cell.postPic.addGestureRecognizer(tgr)
